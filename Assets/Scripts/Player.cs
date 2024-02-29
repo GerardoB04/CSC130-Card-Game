@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Lives = 5;
+        Lives = 6;
         Cards = new List<Card>();
         Bet = 1;
     }
