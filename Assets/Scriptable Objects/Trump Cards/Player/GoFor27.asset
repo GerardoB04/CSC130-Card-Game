@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a263c76accbdeb4ba95abc92fbc1419, type: 3}
   m_Name: GoFor27
   m_EditorClassIdentifier: 
-  Name: 
-  Description: 
+  Name: Go for 27
+  Description: The closest to 27 wins while this card is on the table. Replaces other
+    "Go For" cards that are already on the table.
   CardIcon: {fileID: 0}
