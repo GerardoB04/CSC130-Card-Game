@@ -1,26 +1,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
-{
-    public byte Lives { get; private set; }
-    public List<Card> Cards { get; private set; }
-    public byte Bet { get; private set; }
+public class Player : MonoBehaviour {
+    public List<GameObject> Cards;
+    public List<Transform> CardTransforms;
 
     private Health PlayerHealth;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         PlayerHealth = GetComponent<Health>();
-        Lives = 6;
-        Cards = new List<Card>();
-        Bet = 1;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            // Open settings
+        }
+    }
 
+    public void FirstCardDraw(GameObject card) { 
+        card.GetComponent<Card>().TurnOver();
+        Cards.Add(card);
+        Instantiate(Cards[0], CardTransforms[0].transform);
+    }
+
+    public void DrawCard(GameObject card) {
+        card.GetComponent<Card>().TurnUp();
+        Cards.Add(card);
+
+        for (int i = 1; i < CardTransforms.Count; i++) {
+            if (CardTransforms[i].childCount == 0) {
+                Instantiate(Cards[1], CardTransforms[i].transform);
+                return;
+            }
+        }
     }
 }
