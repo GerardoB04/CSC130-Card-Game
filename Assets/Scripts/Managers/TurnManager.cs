@@ -13,10 +13,20 @@ public class TurnManager : MonoBehaviour {
     public List<Transform> PlayerTransforms;
     public List<Transform> enemyTransforms;
 
+    private bool PlayerTurnPass = false;
+    private bool EnemyTurnPass = false;
+
     private GameObject PlayerObject;
     private GameObject EnemyObject;
 
+    public GameStates State;
+
     void Start() {
+        State = GameStates.START;
+        StartGame();
+    }
+
+    void StartGame() {
         PlayerObject = GameObject.FindGameObjectWithTag("Player");
         EnemyObject = GameObject.FindGameObjectWithTag("Enemy");
         var test = FullDeck.CardDeck;
@@ -37,5 +47,13 @@ public class TurnManager : MonoBehaviour {
         deck.RemoveAt(RandomNumber);
 
         return RandomCard;
+    }
+
+    public void PlayerDraw() {
+        PlayerObject.GetComponent<Player>().DrawCard(GetRandomAndRemove(FullDeckCopy));
+    }
+
+    public void Punishment() {
+        // Punish entity furthest from 21
     }
 }

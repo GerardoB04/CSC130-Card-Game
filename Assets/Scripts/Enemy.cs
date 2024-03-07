@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour {
 
         for (int i = 1; i < CardTransforms.Count; i++) {
             if (CardTransforms[i].childCount == 0) {
-                Instantiate(Cards[1], CardTransforms[i].transform);
+                Instantiate(Cards[i], CardTransforms[i].transform);
                 return;
             }
         }

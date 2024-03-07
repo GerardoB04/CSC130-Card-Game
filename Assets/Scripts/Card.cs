@@ -8,9 +8,11 @@ public class Card : MonoBehaviour {
     [SerializeField] private Sprite FaceUpSprite;
 
     private SpriteRenderer Renderer;
+    private Animator Anim;
 
     void Start() {
         Renderer = GetComponent<SpriteRenderer>();
+        Anim = GetComponent<Animator>();
     }
 
     void Update() {
@@ -24,5 +26,13 @@ public class Card : MonoBehaviour {
 
     public void TurnUp() {
         IsFaceDown = false;
+    }
+
+    public void StartBurning() {
+        Anim.SetTrigger("Discard");
+    }
+
+    public void Burn() {
+        Destroy(gameObject);
     }
 }
