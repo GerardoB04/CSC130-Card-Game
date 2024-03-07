@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5636984313364162154}
   m_Layer: 0
   m_Name: NineCard
-  m_TagString: Untagged
+  m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,11 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dbe3a8b665d1ba4ab368a6824ea875a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Value: 9
   IsFaceDown: 0
   IsDead: 0
   FaceDownSprite: {fileID: 1056071681, guid: 3bb25c30dcf6cf14aaf99a5275c2568d, type: 3}
   FaceUpSprite: {fileID: 662698223, guid: 3bb25c30dcf6cf14aaf99a5275c2568d, type: 3}
+  Value: 9
 --- !u!212 &3793963192962819791
 SpriteRenderer:
   m_ObjectHideFlags: 0

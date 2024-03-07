@@ -447,62 +447,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1992314741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &227608228
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 227608229}
-  - component: {fileID: 227608230}
-  m_Layer: 0
-  m_Name: FullDeck
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &227608229
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 227608228}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &227608230
+--- !u!114 &227608230 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 9108073802505356297, guid: 8d1a37e8d3c60684a896d644d25fba91, type: 3}
+  m_PrefabInstance: {fileID: 3668137072157751232}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 227608228}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3136223eca49e714e89dd89356f21620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardDeck:
-  - {fileID: 7229060706716228592, guid: a349eec8c28582b43b0860e53e384308, type: 3}
-  - {fileID: 4922418739234443557, guid: b855ff5d0c0d1674abcc00d936aa23ea, type: 3}
-  - {fileID: 8031713148427698125, guid: c05a50e0091b15447b1e9a3587c188bd, type: 3}
-  - {fileID: 8612923912819106906, guid: 909785bdc5e90764b867379293fff22f, type: 3}
-  - {fileID: 6991400205870850057, guid: 1c21fae73aa68f042a18873bcba9d439, type: 3}
-  - {fileID: 3000996810045908210, guid: 540d8b9447ac1b34c9eabcfa326c41c7, type: 3}
-  - {fileID: 7030029166126980831, guid: 1d106e3bd3f457d4980cc3e259788b4a, type: 3}
-  - {fileID: 6309644325864761764, guid: b18c4d822b0e39949a684fc08a727e24, type: 3}
-  - {fileID: 6188067314030858345, guid: 1a3cbea2e898c7049a3bd41ed42674a9, type: 3}
-  - {fileID: 8683144052317451918, guid: ac48f120ff97c9740a3e1a67c1e67f45, type: 3}
-  - {fileID: 8749753906721151412, guid: d4c2dac159bb98546be8e182ce0bbc2c, type: 3}
 --- !u!1 &250845269
 GameObject:
   m_ObjectHideFlags: 0
@@ -1362,6 +1317,37 @@ MonoBehaviour:
   - {fileID: 952300627}
   - {fileID: 374437490}
   - {fileID: 122066171}
+  EnemyDrawCard:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 502394116}
+        m_TargetAssemblyTypeName: TurnManager, Assembly-CSharp
+        m_MethodName: EnemyDraw
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  EnemyPass:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 502394116}
+        m_TargetAssemblyTypeName: TurnManager, Assembly-CSharp
+        m_MethodName: EnemyPass
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  CardValues: 0
 --- !u!4 &453784593
 Transform:
   m_ObjectHideFlags: 0
@@ -1389,6 +1375,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc7693d8560b6e4ea6328f9d4ac2865, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  EnemyDeath:
+    m_PersistentCalls:
+      m_Calls: []
   StartingHealth: 6
 --- !u!1 &465361504
 GameObject:
@@ -1569,6 +1561,11 @@ MonoBehaviour:
   - {fileID: 952300627}
   - {fileID: 374437490}
   - {fileID: 122066171}
+  UpdateCards:
+    m_PersistentCalls:
+      m_Calls: []
+  PlayerTurnPass: 0
+  EnemyTurnPass: 0
   State: 0
 --- !u!1 &519420028
 GameObject:
@@ -2473,6 +2470,7 @@ Transform:
   - {fileID: 926480992}
   - {fileID: 2100535419}
   - {fileID: 465361505}
+  - {fileID: 941078914}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &836448016
@@ -2676,6 +2674,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 830820117}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &941078913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 941078914}
+  - component: {fileID: 941078915}
+  m_Layer: 0
+  m_Name: VignetteManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &941078914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941078913}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 830820117}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &941078915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941078913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ca7f8b4a693efc4eafac438349bb32f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Vignette: {fileID: -8021318629775708668, guid: 424799608f7334c24bf367e4bbfa7f9a, type: 2}
+  VignetteMaterial: {fileID: 2100000, guid: d1b450f6f0fb70f418e2e9f64d2ef120, type: 2}
+  FadeInTime: 1.5
+  FadeOutTime: 1.5
+  LerpSpeed: 0.1
 --- !u!1 &952300626
 GameObject:
   m_ObjectHideFlags: 0
@@ -3328,7 +3375,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -650, y: 325}
+  m_AnchoredPosition: {x: -580, y: 325}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1259017124
@@ -3414,7 +3461,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -149.42572, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3736,8 +3783,10 @@ MonoBehaviour:
   HealthSlider: {fileID: 1901338649}
   EaseHealthSlider: {fileID: 303479811}
   HealthComponent: {fileID: 453784594}
+  CardValueText: {fileID: 1259017124}
   MaxHealth: 6
   LerpSpeed: 0.06
+  IsPlayer: 0
 --- !u!1 &1333563557
 GameObject:
   m_ObjectHideFlags: 3
@@ -4470,7 +4519,53 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  PlayerPass:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 502394116}
+        m_TargetAssemblyTypeName: TurnManager, Assembly-CSharp
+        m_MethodName: PlayerPass
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  EnableVignette:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 941078915}
+        m_TargetAssemblyTypeName: VignetteManager, Assembly-CSharp
+        m_MethodName: StartFadeIn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  DisableVignette:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 941078915}
+        m_TargetAssemblyTypeName: VignetteManager, Assembly-CSharp
+        m_MethodName: StartFadeOut
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   UISettings: {fileID: 1872006359}
+  CardValues: 0
 --- !u!4 &1847321602
 Transform:
   m_ObjectHideFlags: 0
@@ -4498,6 +4593,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc7693d8560b6e4ea6328f9d4ac2865, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  EnemyDeath:
+    m_PersistentCalls:
+      m_Calls: []
   StartingHealth: 6
 --- !u!1 &1872006359
 GameObject:
@@ -4723,8 +4824,10 @@ MonoBehaviour:
   HealthSlider: {fileID: 1100164932}
   EaseHealthSlider: {fileID: 691946338}
   HealthComponent: {fileID: 1847321603}
+  CardValueText: {fileID: 34132034}
   MaxHealth: 6
   LerpSpeed: 0.06
+  IsPlayer: 1
 --- !u!1 &1917732246
 GameObject:
   m_ObjectHideFlags: 0
@@ -5236,6 +5339,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122443711}
   m_CullTransparentMesh: 1
+--- !u!1001 &3668137072157751232
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1117367252919124191, guid: 8d1a37e8d3c60684a896d644d25fba91, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1117367252919124191, guid: 8d1a37e8d3c60684a896d644d25fba91, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1117367252919124191, guid: 8d1a37e8d3c60684a896d644d25fba91, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1117367252919124191, guid: 8d1a37e8d3c60684a896d644d25fba91, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1117367252919124191, guid: 8d1a37e8d3c60684a896d644d25fba91, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1117367252919124191, guid: 8d1a37e8d3c60684a896d644d25fba91, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1117367252919124191, guid: 8d1a37e8d3c60684a896d644d25fba91, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1117367252919124191, guid: 8d1a37e8d3c60684a896d644d25fba91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1117367252919124191, guid: 8d1a37e8d3c60684a896d644d25fba91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1117367252919124191, guid: 8d1a37e8d3c60684a896d644d25fba91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6035810344630480582, guid: 8d1a37e8d3c60684a896d644d25fba91, type: 3}
+      propertyPath: m_Name
+      value: FullDeck
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8d1a37e8d3c60684a896d644d25fba91, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -5245,6 +5405,6 @@ SceneRoots:
   - {fileID: 1757302755}
   - {fileID: 1992314741}
   - {fileID: 830820117}
-  - {fileID: 227608229}
+  - {fileID: 3668137072157751232}
   - {fileID: 1007348510}
   - {fileID: 1755170419}

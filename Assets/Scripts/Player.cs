@@ -6,10 +6,14 @@ public class Player : MonoBehaviour {
     public List<GameObject> Cards;
     public List<Transform> CardTransforms;
     public UnityEvent PlayerDrawCard;
+    public UnityEvent PlayerPass;
+    public UnityEvent EnableVignette;
+    public UnityEvent DisableVignette;
     [SerializeField] private GameObject UISettings;
+    [SerializeField] private int CardValues;
 
     private Health PlayerHealth;
-    private bool IsTurn = true;
+    private bool IsTurn = false;
 
     void Start() {
         PlayerHealth = GetComponent<Health>();
@@ -29,9 +33,12 @@ public class Player : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.E)) {
             if (IsTurn) {
-                // Pass turn code
+                PlayerPass.Invoke();
+                DisableVignette.Invoke();
+                IsTurn = false;
             }
         }
+        UpdateCardValues();
     }
 
     public void FirstCardDraw(GameObject card) { 
@@ -50,5 +57,29 @@ public class Player : MonoBehaviour {
                 return;
             }
         }
+    }
+
+    public void ClearDeck() { 
+        Cards.Clear();
+    }
+
+    public void SetTurn(bool turn) {
+        if (turn) { 
+            EnableVignette.Invoke();
+            IsTurn = true;
+        } else IsTurn = false;
+    }
+
+    public void UpdateCardValues() {
+        int CardVal = 0;
+        foreach (var card in Cards) CardVal += card.GetComponent<Card>().Value;
+        CardValues = CardVal;
+    }
+
+    public int GetCardValues() {
+        int CardVal = 0;
+        if (Cards.Count <= 0) return CardVal;
+        foreach (var card in Cards) CardVal += card.GetComponent<Card>().Value;
+        return CardVal;
     }
 }

@@ -1,18 +1,32 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour {
     public List<GameObject> Cards;
     public List<Transform> CardTransforms;
+    public UnityEvent EnemyDrawCard;
+    public UnityEvent EnemyPass;
+    [SerializeField] private int CardValues;
 
     private Health EnemyHealth;
+    private bool IsTurn = false;
 
     void Start() {
         EnemyHealth = GetComponent<Health>();
     }
 
     void Update() {
-        // Instert enemy AI here
+        UpdateCardValues();
+
+        if (IsTurn) {
+            if (CardValues < 21) EnemyDrawCard.Invoke();
+            else {
+                Debug.Log("Enemy pass");
+                EnemyPass.Invoke();
+                IsTurn = false;
+            }
+        }
     }
 
     public void FirstCardDraw(GameObject card) {
@@ -31,5 +45,27 @@ public class Enemy : MonoBehaviour {
                 return;
             }
         }
+    }
+
+    public void ClearDeck() {
+        Cards.Clear();
+    }
+
+    public void SetTurn(bool turn) {
+        if (turn) IsTurn = true;
+        else IsTurn = false;
+    }
+
+    public void UpdateCardValues() {
+        int CardVal = 0;
+        foreach (var card in Cards) CardVal += card.GetComponent<Card>().Value;
+        CardValues = CardVal;
+    }
+
+    public int GetCardValues() {
+        int CardVal = 0;
+        if (Cards.Count <= 0) return CardVal;
+        foreach (var card in Cards) CardVal += card.GetComponent<Card>().Value;
+        return CardVal - Cards[0].GetComponent<Card>().Value;
     }
 }

@@ -1,11 +1,11 @@
 using UnityEngine;
 
 public class Card : MonoBehaviour {
-    [SerializeField] private int Value;
     [SerializeField] private bool IsFaceDown = false;
     [SerializeField] private bool IsDead = false;
     [SerializeField] private Sprite FaceDownSprite;
     [SerializeField] private Sprite FaceUpSprite;
+    public int Value;
 
     private SpriteRenderer Renderer;
     private Animator Anim;

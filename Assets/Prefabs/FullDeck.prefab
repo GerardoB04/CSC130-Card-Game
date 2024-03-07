@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6035810344630480582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1117367252919124191}
+  - component: {fileID: 9108073802505356297}
+  m_Layer: 0
+  m_Name: FullDeck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1117367252919124191
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6035810344630480582}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9108073802505356297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6035810344630480582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3136223eca49e714e89dd89356f21620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardDeck:
+  - {fileID: 7229060706716228592, guid: a349eec8c28582b43b0860e53e384308, type: 3}
+  - {fileID: 4922418739234443557, guid: b855ff5d0c0d1674abcc00d936aa23ea, type: 3}
+  - {fileID: 8031713148427698125, guid: c05a50e0091b15447b1e9a3587c188bd, type: 3}
+  - {fileID: 8612923912819106906, guid: 909785bdc5e90764b867379293fff22f, type: 3}
+  - {fileID: 6991400205870850057, guid: 1c21fae73aa68f042a18873bcba9d439, type: 3}
+  - {fileID: 3000996810045908210, guid: 540d8b9447ac1b34c9eabcfa326c41c7, type: 3}
+  - {fileID: 7030029166126980831, guid: 1d106e3bd3f457d4980cc3e259788b4a, type: 3}
+  - {fileID: 6309644325864761764, guid: b18c4d822b0e39949a684fc08a727e24, type: 3}
+  - {fileID: 6188067314030858345, guid: 1a3cbea2e898c7049a3bd41ed42674a9, type: 3}
+  - {fileID: 8683144052317451918, guid: ac48f120ff97c9740a3e1a67c1e67f45, type: 3}
+  - {fileID: 8749753906721151412, guid: d4c2dac159bb98546be8e182ce0bbc2c, type: 3}

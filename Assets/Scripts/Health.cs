@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour {
+    public UnityEvent PlayerDeath;
+    public UnityEvent EnemyDeath;
     [SerializeField] private float StartingHealth;
     public float MaxHealth { get; private set; }
     public float CurrentHealth { get; private set; }
@@ -23,7 +26,17 @@ public class Health : MonoBehaviour {
             AudioManager.Instance.PlaySFX("Injured");
         } else {
             AudioManager.Instance.PlaySFX("Death");
-            if (gameObject.CompareTag("Player")) Destroy(gameObject);
+            if (gameObject.CompareTag("Player")) {
+                Debug.Log("Player has died.");
+                PlayerDeath.Invoke();
+                Destroy(gameObject);
+            }
+
+            if (gameObject.CompareTag("Enemy")) {
+                Debug.Log("Enemy has died.");
+                EnemyDeath.Invoke();
+                Destroy(gameObject);
+            }
         }
     }
 }
