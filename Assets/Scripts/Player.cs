@@ -13,7 +13,7 @@ public class Player : MonoBehaviour {
     [SerializeField] private int CardValues;
 
     private Health PlayerHealth;
-    private bool IsTurn = false;
+    public bool IsTurn = false;
 
     void Start() {
         PlayerHealth = GetComponent<Health>();

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,7 +11,7 @@ public class Enemy : MonoBehaviour {
     [SerializeField] private int CardValues;
 
     private Health EnemyHealth;
-    private bool IsTurn = false;
+    public bool IsTurn = false;
 
     void Start() {
         EnemyHealth = GetComponent<Health>();

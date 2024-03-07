@@ -57,13 +57,13 @@ public class TurnManager : MonoBehaviour {
         PlayerTurnPass = false;
         EnemyTurnPass = false;
 
+        yield return new WaitForSeconds(3f);
+
         PlayerObject.GetComponent<Player>().FirstCardDraw(GetRandomAndRemove(FullDeckCopy));
         PlayerObject.GetComponent<Player>().DrawCard(GetRandomAndRemove(FullDeckCopy));
 
         EnemyObject.GetComponent<Enemy>().FirstCardDraw(GetRandomAndRemove(FullDeckCopy));
         EnemyObject.GetComponent<Enemy>().DrawCard(GetRandomAndRemove(FullDeckCopy));
-
-        yield return new WaitForSeconds(2f);
 
         State = GameStates.PLAYERTURN;
         PlayerTurn();
@@ -114,9 +114,8 @@ public class TurnManager : MonoBehaviour {
     }
 
     public void Punishment() {
-        Debug.Log("Procced Punishment");
         PlayerObject.GetComponent<Player>().SetTurn(false);
-        PlayerObject.GetComponent<Player>().SetTurn(false);
+        EnemyObject.GetComponent<Enemy>().SetTurn(false);
 
         var PlayerCardVals = PlayerObject.GetComponent<Player>().GetCardValues();
         var EnemyCardVals = EnemyObject.GetComponent<Enemy>().GetCardValues();
